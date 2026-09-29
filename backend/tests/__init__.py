@@ -1,1 +1,0 @@
-"""SnapFit Backend API Tests."""
