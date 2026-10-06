@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+build/
+
+# Environment variables (chứa mật khẩu DB, secrets)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS & Editor
+.DS_Store
+.idea/
+.vscode/
+
+# AI & Scaffold temporary files
+.agents/
+.claude/
+.cursor/
+.devin/

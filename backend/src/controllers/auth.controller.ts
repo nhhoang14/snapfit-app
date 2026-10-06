@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { register } from "../services/auth.service";
 import { RegisterRequest } from "../types/auth.types";
-import { registerSchema } from "../validator/auth.validator";
+import { registerSchema } from "../validators/auth.validator";
 
 export const postRegister = async (req: Request, res: Response) => {
     const result = registerSchema.safeParse(req.body);
@@ -12,7 +12,10 @@ export const postRegister = async (req: Request, res: Response) => {
 
     const data: RegisterRequest = result.data;
 
-    const response = await register(data);
-
-    res.json(response);
+    try {
+        const response = await register(data);
+        res.status(201).json(response);
+    } catch (error: any) {
+        res.status(400).json({ message: error.message || "Registration failed" });
+    }
 };
