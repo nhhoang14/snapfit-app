@@ -1,9 +1,7 @@
-# Dependencies
-node_modules/
+# SnapFit – .gitignore
 
-# Production build
-dist/
-build/
+# OS generated files
+.DS_Store
 
 # Environment variables
 .env
@@ -16,15 +14,36 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# OS
-.DS_Store
+# Maven build output
+/target/
+*.jar
+*.war
+*.ear
 
-# IDE
+# Gradle (if ever used)
+.gradle
+/build/
+
+# Node / npm artifacts
+node_modules/
+
+# IDE specific files
 .idea/
 .vscode/
+*.iml
 
-# AI & Scaffold temporary files
+# Temporary files
+*.tmp
+*.swp
+
+# AI & Scaffold temporary files (Antigravity customizations)
 .agents/
 .claude/
 .cursor/
 .devin/
+
+# Miscellaneous
+coverage/
+*.class
+*.project
+*.classpath
